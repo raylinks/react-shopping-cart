@@ -9,6 +9,7 @@ export default class HomeScreen extends Component {
       <div>
         <div className="content">
           <div className="main">
+          <h1> love</h1>
             <Filter></Filter>
             <Products></Products>
           </div>
