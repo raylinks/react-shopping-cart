@@ -32,11 +32,12 @@ class Products extends Component {
             <div>Loading...</div>
           ) : (
             <ul className="products">
-              {this.props.products.map((product) => (
+              {/* {this.props.products.map((product) => ( */}
+                this.props.productArray.map((product) => {
                 <li key={product._id}>
                   <div className="product">
                     <a
-                      href={"#" + product._id}
+                      href={"#" + product.productArray.name}
                       onClick={() => this.openModal(product)}
                     >
                       <img src={product.image} alt={product.title}></img>

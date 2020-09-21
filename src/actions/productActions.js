@@ -1,13 +1,18 @@
 import { FETCH_PRODUCTS } from "../types";
 import { FILTER_PRODUCTS_BY_SIZE, ORDER_PRODUCTS_BY_PRICE } from "../types";
 export const fetchProducts = () => async (dispatch) => {
-  const res = await fetch("/api/products");
-  const data = await res.json();
-  console.log(data);
+ // const res = await fetch("/api/products");
+  //const res = fetch("/localhost:4000/products");
+  const apiUrl = 'http://localhost:4000/products';
+  fetch(apiUrl)
+  .then((response) => response.json())
+      .then((data) => console.log('This is your data', data));
+
+
   dispatch({
     type: FETCH_PRODUCTS,
-    payload: data,
-  });
+    payload: '',
+   });
 };
 
 export const filterProducts = (products, size) => (dispatch) => {
